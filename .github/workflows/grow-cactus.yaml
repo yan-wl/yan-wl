@@ -2,7 +2,7 @@ name: Grow cactus
 
 on: 
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   water:
@@ -13,6 +13,11 @@ jobs:
       - name: Grow
         run: echo '<br/>🌵' >> README.md
       
+      - name: Add identification
+        run: |
+          git config user.email "yanwl.note@gmail.com"
+          git config user.name "yan-wl"
+
       - name: Commit
         run: |
           git add README.md
