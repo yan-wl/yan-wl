@@ -1,0 +1,23 @@
+name: Grow cactus
+
+on: 
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  water:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Grow
+        run: echo '<br/>🌵' >> README.md
+      
+      - name: Commit
+        run: |
+          git add README.md
+          git commit -m "Grow plant"
+
+      - name: Push
+        run: |
+          git push
