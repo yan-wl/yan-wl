@@ -2,7 +2,7 @@ name: Update image
 
 on: 
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   update:
@@ -27,7 +27,7 @@ jobs:
       - name: Commit
         run: |
           git add README.md
-          git commit -m "Grow plant"
+          git commit -m "Update image"
 
       - name: Push
         run: |
